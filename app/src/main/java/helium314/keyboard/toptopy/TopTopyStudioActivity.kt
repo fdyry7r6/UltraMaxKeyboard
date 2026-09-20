@@ -55,7 +55,7 @@ class TopTopyStudioActivity : ComponentActivity() {
             TopTopyTextStyles.Style.entries.forEach { style -> addFontAction(style) }
             addHint("Tap a style to convert the selected text or the current word. These are Unicode styles, so they work across many apps.")
         }
-        1 -> listOf("(｡♥‿♥｡)","(づ｡◕‿‿◕｡)づ","(╥﹏╥)","(ง'̀-'́)ง","(•_•)","(¬‿¬)","(ʘ‿ʘ)","♡(˃͈ દ ˂͈ ༶ )","¯\_(ツ)_/¯","(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧").forEach{addAction(it){sendInsert(it)}}
+        1 -> listOf("(｡♥‿♥｡)","(づ｡◕‿‿◕｡)づ","(╥﹏╥)","(ง'̀-'́)ง","(•_•)","(¬‿¬)","(ʘ‿ʘ)","♡(˃͈ દ ˂͈ ༶ )","¯\\_(ツ)_/¯","(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧").forEach{addAction(it){sendInsert(it)}}
         2 -> listOf("♡","♥","☆","★","✦","✧","⚡","☾","☽","♛","♕","∞","꧁","꧂","『","』","【","】","※","彡","ツ","亗","×","✓","→","←","↑","↓").forEach{addAction(it){sendInsert(it)}}
         3 -> listOf("╔════════════╗","║  TOP TOP Y  ║","╚════════════╝","━━━━━━━✦━━━━━━━","┏━━━━━━━━━━━━┓","┗━━━━━━━━━━━━┛","꧁༺ TOP TOP Y ༻꧂","『 T O P  T O P Y 』","★彡 TOP TOP Y 彡★").forEach{addAction(it){sendInsert(it+" ")}}
         4 -> {
@@ -72,7 +72,7 @@ class TopTopyStudioActivity : ComponentActivity() {
     }
 
     private fun addAction(label:String, action:()->Unit){ val b=button(label); b.setOnClickListener{action()}; content.addView(b,LinearLayout.LayoutParams(-1,56).apply{setMargins(0,5,0,5)}) }
-    private fun addHint(text:String){val t=TextView(this).apply{text=text; textSize=12f; setTextColor(0xFFAAA9BA.toInt()); setPadding(10,14,10,14)}; content.addView(t)}
+    private fun addHint(text:String){val t=TextView(this).apply{this.text=text; textSize=12f; setTextColor(0xFFAAA9BA.toInt()); setPadding(10,14,10,14)}; content.addView(t)}
     private fun button(text:String)=Button(this).apply{this.text=text; textSize=14f; isAllCaps=false; setTextColor(Color.WHITE); background=gradient(0xFF24243A.toInt(),0xFF171727.toInt()); gravity=Gravity.CENTER; minHeight=0}
     private fun gradient(a:Int,b:Int)=GradientDrawable(GradientDrawable.Orientation.TL_BR,intArrayOf(a,b)).apply{cornerRadius=18f}
 

@@ -184,5 +184,5 @@ object TopTopyTextStyles {
         }
     }.joinToString("")
 
-    private fun wideSpacing(text: String): String = text.joinToString("  ")
+    private fun wideSpacing(text: String): String = text.toList().joinToString("  ")
 }
